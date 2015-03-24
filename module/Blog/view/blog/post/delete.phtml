@@ -1,0 +1,25 @@
+<?php
+// module/Blog/view/blog/post/delete.phtml:
+
+$title = 'Delete post';
+$this->headTitle($title);
+?>
+<h1><?php echo $this->escapeHtml($title); ?></h1>
+<p>
+ <a href="<?php //echo $this->url('admPost', array('action'=>'index'));?>">Back to adm</a>
+</p>
+
+<p>Are you sure that you want to delete</p>
+<?php
+$url = $this->url('admPost', array(
+ 'action' => 'delete',
+ 'id'     => $this->id,
+));
+?>
+<form action="<?php echo $url; ?>" method="post">
+<div>
+ <input type="hidden" name="id" value="<?php echo (int) $post->id; ?>" />
+ <input type="submit" name="del" value="Yes" />
+ <input type="submit" name="del" value="No" />
+</div>
+</form>

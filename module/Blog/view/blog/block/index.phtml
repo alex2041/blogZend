@@ -1,0 +1,48 @@
+<?php
+// module/Blog/view/blog/block/index.phtml:
+
+$title = 'My blocks';
+$this->headTitle($title);
+?>
+<div class="admindex">
+    <p>
+     <a href="<?php echo $this->url('adm');?>">Back to adm</a>
+    </p>
+    <h1><?php echo $this->escapeHtml($title); ?></h1>
+    <p>
+     <a href="<?php echo $this->url('admBl', array('action'=>'add'));?>">Add new block</a>
+    </p>
+    
+    <table class="table">
+    <tr>
+     <th>Name</th>
+     <th>&nbsp;</th>
+    </tr>
+    <?php foreach ($paginator as $block) : ?>
+    <tr>
+     <td><?php echo $this->escapeHtml($block->name_bl);?></td>
+     <td>
+         <a href="<?php echo $this->url('admBl',
+             array('action'=>'edit', 'id' => $block->id));?>">Edit</a>
+         <a href="<?php echo $this->url('admBl',
+             array('action'=>'delete', 'id' => $block->id));?>">Delete</a>
+     </td>
+    </tr>
+    <?php endforeach; ?>
+    </table>
+</div>
+<?php
+// add at the end of the file after the table
+echo $this->paginationControl(
+ // the paginator object
+ $this->paginator,
+ // the scrolling style
+ 'sliding',
+ // the partial to use to render the control
+ 'partial/paginator.phtml',
+ // the route to link to when a user clicks a control link
+ array(
+     'route' => $_SERVER[REQUEST_URI],
+ )
+);
+?>

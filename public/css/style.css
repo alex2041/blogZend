@@ -1,0 +1,274 @@
+body {
+    padding-top: 60px;
+    padding-bottom: 40px;
+    background-image: url("../img/logolol.png");
+}
+
+footer{
+   background-color: white;
+   text-align: center;
+   border-radius: 25px;
+}
+
+form{
+    background-color: white;
+    text-align: center;
+    border-radius: 25px;
+}
+
+.zf-green {
+    color: #68b604;
+}
+
+.btn-success {
+  background-color: #57a900;
+  background-image: -moz-linear-gradient(top, #70d900, #57a900);
+  background-image: -ms-linear-gradient(top, #70d900, #57a900);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#70d900), to(#57a900));
+  background-image: -webkit-linear-gradient(top, #70d900, #57a900);
+  background-image: -o-linear-gradient(top, #70d900, #57a900);
+  background-image: linear-gradient(top, #70d900, #57a900);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#70d900', endColorstr='#57a900', GradientType=0);
+}
+
+.btn-success:hover,
+.btn-success:active,
+.btn-success.active,
+.btn-success.disabled,
+.btn-success[disabled] {
+  background-color: #57a900;
+}
+
+.btn-success:active, .btn-success.active {
+  background-color: #57a900;
+}
+
+div.container a.brand {
+    background: url("../img/zf2-logo.png") no-repeat scroll 0 10px transparent;
+    margin-left: 0;
+    padding: 8px 20px 12px 40px;
+}
+
+.post{
+    margin: 25px;
+}
+
+#page{
+    border: 1px solid green;
+    width: 800px;
+    margin: 0 auto;
+    background-color: white;
+}
+
+#admpage{
+    border: 1px solid green;
+    width: 625px;
+    margin: 0 auto;
+    background-color: royalblue;
+}
+
+.admindex{
+    background-color: white;
+    padding: 15px;
+    border-radius: 25px;
+}
+
+.line{
+    height: 10px;
+    border-color: dodgerblue;
+    width: 90%;
+}
+
+.title{
+    margin: 5px;
+    font-size: 25px;
+}
+
+.container{
+    margin-top: 160px;
+}
+
+#menuc{
+    width: 950px;
+    margin: 0 auto;
+}
+
+.menuon{
+    width: 950px;
+    background-color: white;
+    position: fixed;
+    top: 0px;
+    border-top: none;
+    border-radius: 17px;
+    opacity: 0.95;
+}
+
+.menu {
+    display: block;
+    margin: 0 auto;
+    box-shadow: 0 1px 1px rgba(20, 20, 20, 0.2);
+    cursor: pointer;
+    outline: none;
+    font-weight: bold;
+}
+
+.menu li { 
+    display: block; 
+    position: relative; 
+    float: left;  
+    text-shadow: 1px 1px 0 #fff;
+    padding: 10px 45px 10px 45px;
+}
+
+.menu li a {
+  /*line-height: 78px;*/
+  font-weight: bold;
+  text-decoration: none;
+  color: black;
+  -webkit-transition: all 0.2s linear;
+  -moz-transition: all 0.2s linear;
+  -o-transition: all 0.2s linear;
+  transition: all 0.2s linear;
+  padding: 10px;
+  
+}
+.menu li:hover > a { color: red;}
+
+.menu ul {
+  position: absolute;
+  top: 50px;
+  display: none;
+  list-style: none;
+  border-radius: 3px;
+  border: 1px solid rgba(0, 0, 0, 0);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0);
+  -webkit-padding-start: 0px;
+  background: black;
+  border-radius: 12px;
+  padding: 0px;
+}
+.menu ul:after {
+  content: "";
+  width: 0;
+  height: 0;
+  position:absolute;
+  bottom: 100%;
+  left: 8px;
+  border-width: 0 8px 8px 8px;
+  border-style: solid;
+  border-color: #fff transparent;
+}
+
+.menu ul:before {
+  content: "";
+  width: 0;
+  height: 0;
+  position: absolute;
+  bottom: 100%;
+  border-style: solid;
+  border-color: rgba(0, 0, 0, 0.1) transparent;  
+}
+
+.menu ul li { 
+  display: block; 
+  text-shadow: 1px 1px 0 #fff;
+
+}
+
+.menu ul li a {
+    display: inline-block;
+    width: 100px;
+    -webkit-transition: all 0.2s linear;
+    -moz-transition: all 0.2s linear;
+    -o-transition: all 0.2s linear;
+    transition: all 0.2s linear;
+    background: white;
+    border-radius: 8px;
+    text-align: center;
+}
+.menu ul li a:hover {
+  padding: 10px;
+}
+
+.menu li ul li{
+    padding: 0px;
+    margin: 0px;
+}
+
+.menu li ul li a{
+    padding: 5px;
+    margin: 5px;
+}
+.btn-adm{
+    border: 1px solid black;
+    width: auto;
+    display: inline-block;
+    display: -moz-inline-box;
+    margin: 5px;
+    border-radius: 25px;
+    padding: 5px;
+    font-size: 25px;
+    background-color: black;
+}
+
+.btn-adm-log{
+    border: 1px solid red;
+    width: auto;
+    display: inline-block;
+    display: -moz-inline-box;
+    margin: 5px;
+    border-radius: 25px;
+    padding: 5px;
+    font-size: 25px;
+    background-color: red;
+}
+
+.btn-adm a{
+    text-decoration: none;
+}
+
+.btn-adm-name{
+    background-color: black;
+    border-radius: 25px;
+    padding: 5px;
+    color: white;
+}
+
+.btn-adm-name-log{
+    background-color: red;
+    border-radius: 25px;
+    padding: 5px;
+    color: black;
+}
+
+.btn-adm-name-log:hover{
+    color: red;
+}
+
+.btn-adm-name:hover{
+    color: black;
+}
+
+.btn-adm-plus{
+    background-color: white;
+    color: black;
+    border-radius: 25px;
+    padding: 9px 15px 9px 15px;
+    margin-right: -5px;
+}
+
+.btn-adm-iks{
+    background-color: black;
+    color: white;
+    border-radius: 25px;
+    padding: 9px 15px 9px 15px;
+    margin-right: -5px;
+}
+
+.btn-adm-plus:hover{
+    color: white;
+}
+
+.btn-adm-iks:hover{
+    color: black;
+}

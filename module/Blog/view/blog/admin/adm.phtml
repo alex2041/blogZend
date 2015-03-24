@@ -1,0 +1,18 @@
+<div id="admpage">
+    <div class="btn-adm-log">
+        <a href="<?php echo $this->url('login/process', array('action'=>'logout')); ?>" class="btn-adm-name-log">Logout</a>
+        <a href="<?php echo $this->url('login/process', array('action'=>'logout')); ?>" class="btn-adm-iks">X</a>
+    </div>
+    <div class="btn-adm">
+        <a href="<?php echo $this->url('admPost');?>" class="btn-adm-name">Post</a>
+        <a href="<?php echo $this->url('admPost', array('action'=>'add'));?>" class="btn-adm-plus">+</a>
+    </div>
+    <div class="btn-adm">
+        <a href="<?php echo $this->url('admCat');?>" class="btn-adm-name">Category</a>
+        <a href="<?php echo $this->url('admCat', array('action'=>'add'));?>" class="btn-adm-plus">+</a>
+    </div>
+    <div class="btn-adm">
+        <a href="<?php echo $this->url('admBl');?>" class="btn-adm-name">Block</a>
+        <a href="<?php echo $this->url('admBl', array('action'=>'add'));?>" class="btn-adm-plus">+</a>
+    </div>
+</div> 

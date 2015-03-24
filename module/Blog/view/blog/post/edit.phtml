@@ -1,0 +1,29 @@
+<?php
+// module/Blog/view/blog/post/edit.phtml:
+
+$title = 'Edit post';
+$this->headTitle($title);
+?>
+<h1><?php echo $this->escapeHtml($title); ?></h1>
+<p>
+ <a href="<?php echo $this->url('admPost');?>">Back to posts</a>
+</p>
+
+<?php
+$form = $this->form;
+$form->setAttribute('action', $this->url(
+ 'admPost',
+ array(
+     'action' => 'edit',
+     'id'     => $this->id,
+ )
+));
+$form->prepare();
+
+echo $this->form()->openTag($form);
+echo $this->formHidden($form->get('id'));
+echo $this->formRow($form->get('title')); echo '<br/>';
+echo $this->formRow($form->get('id_cat')->setValueOptions($cat)); echo '<br/>';
+echo $this->formRow($form->get('content')); echo '<br/>';
+echo $this->formSubmit($form->get('submit')); echo '<br/>';
+echo $this->form()->closeTag();

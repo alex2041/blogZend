@@ -1,0 +1,50 @@
+<?php
+// module/Blog/view/blog/category/index.phtml:
+
+$title = 'My categorys';
+$this->headTitle($title);
+?>
+<div class="admindex">
+    <p>
+     <a href="<?php echo $this->url('adm');?>">Back to adm</a>
+    </p>
+    <h1><?php echo $this->escapeHtml($title); ?></h1>
+    <p>
+     <a href="<?php echo $this->url('admCat', array('action'=>'add'));?>">Add new category</a>
+    </p>
+    
+    <table class="table">
+    <tr>
+     <th>Name</th>
+     <th>Block</th>
+     <th>&nbsp;</th>
+    </tr>
+    <?php foreach ($paginator as $category) : ?>
+    <tr>
+     <td><?php echo $this->escapeHtml($category->name_cat);?></td>
+     <td><?php echo $this->escapeHtml($category->name_bl);?></td>
+     <td>
+         <a href="<?php echo $this->url('admCat',
+             array('action'=>'edit', 'id' => $category->id));?>">Edit</a>
+         <a href="<?php echo $this->url('admCat',
+             array('action'=>'delete', 'id' => $category->id));?>">Delete</a>
+     </td>
+    </tr>
+    <?php endforeach; ?>
+    </table>
+</div>
+<?php
+// add at the end of the file after the table
+echo $this->paginationControl(
+ // the paginator object
+ $this->paginator,
+ // the scrolling style
+ 'sliding',
+ // the partial to use to render the control
+ 'partial/paginator.phtml',
+ // the route to link to when a user clicks a control link
+ array(
+     'route' => $_SERVER[REQUEST_URI],
+ )
+);
+?>

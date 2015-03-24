@@ -1,0 +1,71 @@
+<?php
+    namespace Blog\Controller;
+    
+    use Zend\Db\Sql\Sql;
+    use Zend\Db\Adapter\Adapter;
+    use Zend\Db\ResultSet\ResultSet; 
+    
+    $resultBlock;
+    $resultCat;
+    
+    $adapter = new \Zend\Db\Adapter\Adapter(array(
+    'driver' => 'Pdo',
+    'dsn' => 'mysql:dbname=zend_blog;host=localhost',
+    'username' => 'root',
+    'password' => ''
+     ));
+     
+    $sql = new Sql($adapter);
+    $select1 = $sql->select();
+    $select1->from('tbl_category');
+    $statement = $sql->prepareStatementForSqlObject($select1);
+    $resultCat = $statement->execute();
+    
+    $resultSet1 = new ResultSet; // Zend\Db\ResultSet
+    $resultSet1->initialize($resultCat);
+    
+    $resultSet1->buffer();
+    
+    $sql = new Sql($adapter);
+    $select2 = $sql->select();
+    $select2->from('tbl_block');
+    $statement = $sql->prepareStatementForSqlObject($select2);
+    $resultBlock = $statement->execute();
+    
+    $resultSet2 = new ResultSet; // Zend\Db\ResultSet
+    $resultSet2->initialize($resultBlock);
+    
+    $resultSet2->buffer();
+    
+    
+    
+    
+?>
+
+<div class="menuon"> 
+      <ul class="menu">
+        <li><a href="/"><span>News</span></a></li>
+            <?php foreach($resultSet2 as $block) : ?>
+        <li class="onelink">
+            <a href="#">
+                <span><?php echo $this->escapeHtml($block->name_bl); ?></span>
+            </a>
+            <ul class="menuLi">
+                <?php foreach($resultSet1 as $cat) : ?>
+                    <?php if($this->escapeHtml($block->id) == $this->escapeHtml($cat->id_block)){ ?>
+                        <li>
+                            <a href="<?php echo $this->url('postCat', array(
+                                                                'action'=>'postCat', 
+                                                                'id' => $cat->id, 
+                                                                'name' => $cat->name_cat
+                                                        ));?>">
+                                <?php echo $this->escapeHtml($cat->name_cat); ?>
+                            </a>
+                        </li>
+                    <?php } ?>
+                <?php endforeach; ?>
+            </ul>
+            <?php endforeach; ?>
+        </li>
+      </ul>
+</div>
